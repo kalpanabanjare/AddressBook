@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Address_Book
+namespace AddressBook
 {
     class Contacts
     {

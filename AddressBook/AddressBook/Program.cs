@@ -49,13 +49,13 @@ namespace AddressBook
             contactDetailIsList.Add(contactsDetails);
             contactDetailIsMap.Add(FirstName, contactsDetails);
         }
-        public void EditDetails(string firstName, string LastName, string address, string city, string state, int zip, int phoneNumber1, int phoneNumber2, String email)
+        public void EditDetails(string FirstName, string LastName, string address, string city, string state, int zip, int phoneNumber1, int phoneNumber2, String email)
         {
-            Contacts contactDetails = new Contacts(firstName, LastName, address, city, state, zip, phoneNumber1, email);
+            Contacts contactDetails = new Contacts(FirstName, LastName, address, city, state, zip, phoneNumber1, email);
             int index = Convert.ToInt32(Console.ReadLine());
             contactDetailIsList[index] = contactDetails;
-            contactDetailIsMap[firstName] = contactDetails;
-        }
+            contactDetailIsMap[FirstName] = contactDetails;
+        }       
         public void ComputeDetails()
         {
             foreach (Contacts contact in contactDetailIsList)
@@ -66,8 +66,7 @@ namespace AddressBook
         static void Main(String[] args)
         {
             Console.WriteLine("Welcome to Address Book Program");
-            AddressBook Details = new AddressBook();
-            //UC2 to add
+            AddressBook Details = new AddressBook();            
             Console.WriteLine("Enter the number of person: ");
             int noOfPersons = Convert.ToInt32(Console.ReadLine());
             for (int numOfPerson = 1; numOfPerson <= noOfPersons; numOfPerson++)
@@ -92,7 +91,7 @@ namespace AddressBook
                 Details.AddDeatails(FirstName, LastName, Address, City, State, ZipCode, PhoneNumber, Email);
             }
             Details.ComputeDetails();
-            //UC3 to edit
+            
             Console.WriteLine("Number of person to edit: ");
             int noOfEdits = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter 0 to edit: ");
@@ -116,10 +115,10 @@ namespace AddressBook
                     Console.Write("Enter Phone Number: ");
                     int PhoneNumber = Convert.ToInt32(Console.ReadLine());
                     Console.Write("Enter Email Address: ");
-                    string Email = Console.ReadLine();                    
+                    string Email = Console.ReadLine();
                     Details.AddDeatails(FirstName, LastName, Address, City, State, ZipCode, PhoneNumber, Email);
                 }
-                Details.ComputeDetails();
+                Details.ComputeDetails();          
             }
         }
     }

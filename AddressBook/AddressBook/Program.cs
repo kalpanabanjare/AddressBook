@@ -55,7 +55,13 @@ namespace AddressBook
             int index = Convert.ToInt32(Console.ReadLine());
             contactDetailIsList[index] = contactDetails;
             contactDetailIsMap[FirstName] = contactDetails;
-        }       
+        }
+        public void DeleteDetails(string FirstName)
+        {
+            int index = Convert.ToInt32(Console.ReadLine());
+            contactDetailIsList.RemoveAt(index);
+            contactDetailIsMap.Remove(FirstName);
+        }
         public void ComputeDetails()
         {
             foreach (Contacts contact in contactDetailIsList)
@@ -118,7 +124,17 @@ namespace AddressBook
                     string Email = Console.ReadLine();
                     Details.AddDeatails(FirstName, LastName, Address, City, State, ZipCode, PhoneNumber, Email);
                 }
-                Details.ComputeDetails();          
+                Details.ComputeDetails();
+                Console.WriteLine("Enter number of person to delete: ");
+                Console.WriteLine("Enter index of person to delete: ");
+                int noOfDeletes = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter 1 to delete:");
+                for (int numOfPerson = 1; numOfPerson <= noOfDeletes; numOfPerson++)
+                {
+                    string FirstName = Console.ReadLine();
+                    Details.DeleteDetails(FirstName);
+                }
+                Details.ComputeDetails();                
             }
         }
     }

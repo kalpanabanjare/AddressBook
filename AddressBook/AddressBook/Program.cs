@@ -123,30 +123,49 @@ namespace AddressBook
                     Console.WriteLine("1 To Add a Contact Details");
                     Console.WriteLine("2 To Edit a Contact Details");
                     Console.WriteLine("3 To Delete Contact");
+                    Console.WriteLine("4 to show contact details");
                     Console.WriteLine("0 To Exit");
                     Option = int.Parse(Console.ReadLine());
-                        switch (Option)
-                        {
-                            case 1:
+                    switch (Option)
+                    {
+                        case 1:
+                            Console.WriteLine("Enter the number of person that you want to add");
+                            int addPerson = int.Parse(Console.ReadLine());
+                            for (int numOfPerson = 1; numOfPerson <= addPerson; numOfPerson++)
+                            {
                                 details.AddDetails();
                                 details.ComputeDetails();
-                                break;
-                            case 2:
+                            }
+                            break;
+                        case 2:
+                            Console.WriteLine("Enter the number of person that you want to add");
+                            int editPerson = int.Parse(Console.ReadLine());
+                            for (int numOfPerson = 1; numOfPerson <= editPerson; numOfPerson++)
+                            {
                                 Console.WriteLine("Enter a First Name to Edit");
                                 string Name = Console.ReadLine();
                                 details.EditDetails(Name);
                                 details.ComputeDetails();
-                                break;
-                            case 3:
-                                details.DeleteContact();                                
-                                break;
-                            case 0:
-                                Console.WriteLine("Exit");
-                                break;
-                            default:
-                                Console.WriteLine("Wrong Opction");
-                                break;
-                        }                    
+                            }
+                            break;
+                        case 3:
+                            Console.WriteLine("Enter the number of person that you want to add");
+                            int deletePerson = int.Parse(Console.ReadLine());
+                            for (int numOfPerson = 1; numOfPerson <= deletePerson; numOfPerson++)
+                            {
+                                details.DeleteContact();
+                            }
+                            break;
+                        case 4:
+                                details.ComputeDetails();
+                            break;
+                        case 0:
+                            Console.WriteLine("Exit");
+                            break;
+                        default:
+                            Console.WriteLine("Wrong Opction");
+                            break;
+                    }                    
                 }
                 while (Option != 0);
             }

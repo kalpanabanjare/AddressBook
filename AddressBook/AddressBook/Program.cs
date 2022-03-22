@@ -123,10 +123,7 @@ namespace AddressBook
                     Console.WriteLine("2 To Edit a Contact Details");
                     Console.WriteLine("3 To Delete Contact");
                     Console.WriteLine("0 To Exit");
-
-                    try
-                    {
-                        Option = int.Parse(Console.ReadLine());
+                    Option = int.Parse(Console.ReadLine());
                         switch (Option)
                         {
                             case 1:
@@ -148,12 +145,7 @@ namespace AddressBook
                             default:
                                 Console.WriteLine("Wrong Opction");
                                 break;
-                        }
-                    }
-                    catch (Exception)
-                    {
-                        Console.WriteLine("Please choose option");
-                    }
+                        }                    
                 }
                 while (Option != 0);
             }
